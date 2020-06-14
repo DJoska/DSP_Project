@@ -1,4 +1,4 @@
-# DSP working file
+# DSP - Training Module
 
 import librosa
 import numpy as np
@@ -11,61 +11,27 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import mean_squared_error
-
-#filename = "E:\\Uni Work\\DSP\\Data\\nsynth-valid\\audio\\bass_electronic_018-023-100.wav"
-#filename_fl = "E:\\Uni Work\\DSP\\Data\\nsynth-valid\\audiokeyboard_acoustic_004-053-075.wav"
-
-#y, sr = librosa.load(filename)
-#y_fl, sr_fl = librosa.load(filename_fl)
-
-#hop_length = 512
-
-# Separate harmonics and percussives into two waveforms
-#y_harmonic, y_percussive = librosa.effects.hpss(y)
-#y_harmonic_fl, y_percussive_fl = librosa.effects.hpss(y_fl)
-
-#mfcc = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)
-
-#temporal averaging
-#mfcc=np.mean(mfcc,axis=1)
-
-#spectrogram = librosa.feature.melspectrogram(y=y, sr=sr, n_mels=128,fmax=8000)  
-
-#temporally average spectrogram
-#spectrogram = np.mean(spectrogram, axis = 1)
-    
-#compute chroma energy
-#chroma = librosa.feature.chroma_cens(y=y, sr=sr)
-#temporally average chroma
-#chroma = np.mean(chroma, axis = 1)
-    
-#compute spectral contrast
-#contrast = librosa.feature.spectral_contrast(y=y, sr=sr)
-#contrast = np.mean(contrast, axis= 1)
-
-#plt.subplot(2,1,1)
-#plt.plot(y_harmonic, label="Harmonics")
-#plt.plot(y_percussive, label = "Percussive")
-#plt.title("Electronic Bass")
-#plt.legend()
-#plt.subplot(2,1,2)
-#plt.plot(y_harmonic_fl, label="Harmonics")
-#plt.plot(y_percussive_fl, label = "Percussive")
-#plt.title("Acoustic Flute")
-#plt.legend()
-#plt.show()
+import DSP_working as fe
 
 #Hyperparameter variables go here
 k = 5
 k_lim = 20
 
 #Dummy data set until we get the feature fully solved
-url = "https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
+url = "http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'Class']
 dataset = pa.read_csv(url, names=names)
 #print(dataset.head())
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 4].values
+
+# Real data for X and y
+y = fe.read_instruments()
+X = [fe.get_features(filename) for filename in fe.get_wav_files()]
+print("X length:")
+print(len(X))
+print("and Y length:")
+print(len(y))
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
 scaler = StandardScaler()
 scaler.fit(X_train)
