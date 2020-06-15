@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import mean_squared_error
-import DSP_working as fe
+import feature_extraction as fe
 
 #Hyperparameter variables go here
 k = 5
