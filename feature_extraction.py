@@ -5,37 +5,38 @@ import numpy as np
 import matplotlib.pyplot as plt
 import os
 import pandas as pd
+import time
 
-def read_wav_names():
+def read_wav_names(path):
     """
     Returns an array of the names of all .wav files in the /samples/ directory, minus the .wav
     """
-    folder = os.path.join(os.path.dirname(__file__),"samples")
+    folder = os.path.join(os.path.dirname(__file__),path)
     paths = os.listdir(folder)
     wav_names = [f[:-4] for f in paths if f.endswith(".wav")]
     return(wav_names)
 
-def read_instruments():
+def read_instruments(path):
     """
     Reads the json file in the /samples/ directory and returns ints representing instrument families
     """
-    folder = os.path.join(os.path.dirname(__file__),"samples")
+    folder = os.path.join(os.path.dirname(__file__),path)
     json_path = os.path.join(folder,"examples.json")
-    wav_names = read_wav_names()
+    wav_names = read_wav_names(path)
     # Extract dataframe
     df = pd.read_json(json_path)
     instruments = [df[wav_name]["instrument_family"] for wav_name in wav_names]
     return(instruments)
 
-def get_wav_files():
+def get_wav_files(path):
     """
     Returns the directories of all .wav audio files within the /samples/ directory
     """
-    folder = os.path.join(os.path.dirname(__file__),"samples")
-    wav_names = read_wav_names()
+    folder = os.path.join(os.path.dirname(__file__),path)
+    wav_names = read_wav_names(path)
     wav_files = [os.path.join(folder,(f+".wav")) for f in wav_names]
-    print("Found wav files:")
-    print(wav_files)
+    print("Successfully found wav files.")
+    #print(wav_files)
     return wav_files
 
 def get_features(filename):

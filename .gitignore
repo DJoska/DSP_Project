@@ -1,2 +1,11 @@
 # Folders to ignore
 __pycache__/
+samples_large
+samples_med
+samples_low
+samples_tiny
+samples_nightmare
+samples_monstrous
+samples_huge
+testdata
+validatedata
