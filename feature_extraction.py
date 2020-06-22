@@ -11,6 +11,7 @@ def read_wav_names(path):
     """
     Returns an array of the names of all .wav files in the /samples/ directory, minus the .wav
     """
+    print("Reading files in ", path, "...")
     folder = os.path.join(os.path.dirname(__file__),path)
     paths = os.listdir(folder)
     wav_names = [f[:-4] for f in paths if f.endswith(".wav")]
@@ -32,6 +33,7 @@ def get_wav_files(path):
     """
     Returns the directories of all .wav audio files within the /samples/ directory
     """
+    print("Retreiving wav files from ", path, "...")
     folder = os.path.join(os.path.dirname(__file__),path)
     wav_names = read_wav_names(path)
     wav_files = [os.path.join(folder,(f+".wav")) for f in wav_names]

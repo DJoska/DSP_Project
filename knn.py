@@ -23,8 +23,8 @@ p = -1
 tic = time.perf_counter()
 
 # Real data for X and y
-path = "samples_huge"
-pathvali = "validatedata"
+path = "samples_large"
+#pathvali = "validatedata"
 pathtest = "testdata"
 y_train = fe.read_instruments(path)
 X_train = [fe.get_features(filename) for filename in fe.get_wav_files(path)]
@@ -35,14 +35,14 @@ print("Training data loaded in.")
 #print(len(y))
 
 # Data collection
-#X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
+#X_train, X_test, y_train, y_test = train_test_split(X_train, y_train, test_size=0.20)
 #X_train, X_vali, y_train, y_vali = train_test_split(X_train, y_train, test_size=0.25)
-y_vali = fe.read_instruments(pathvali)
-X_vali = [fe.get_features(filename) for filename in fe.get_wav_files(pathvali)]
+y_vali = fe.read_instruments(pathtest)
+X_vali = [fe.get_features(filename) for filename in fe.get_wav_files(pathtest)]
 print("Validate data loaded in.")
-#X_vali, X_test, y_vali, y_test = train_test_split(X_vali, y_vali, test_size=0.30)
-y_test =  fe.read_instruments(pathtest)
-X_test = [fe.get_features(filename) for filename in fe.get_wav_files(pathtest)]
+X_vali, X_test, y_vali, y_test = train_test_split(X_vali, y_vali, test_size=0.30)
+#y_test =  fe.read_instruments(pathtest)
+#X_test = [fe.get_features(filename) for filename in fe.get_wav_files(pathtest)]
 print("Test data loaded in.")
 scaler = StandardScaler()
 scaler.fit(X_train)
@@ -127,7 +127,16 @@ plt.xlabel('K Value')
 plt.ylabel('Tested Accuracy')
 plt.show()
 
+plt.figure(figsize=(6, 6))
+plt.plot(range(1, l_lim), accuracy_l, color='blue', linestyle='dashed', marker='o',
+         markerfacecolor='blue', markersize=10)
+plt.title('Accuracy for given leaf size')
+plt.xlabel('Leaf size n')
+plt.ylabel('Tested Accuracy')
+plt.show()
+
 # Measurement Reports
+print("Distance comparison: ", "Manhatten(", accuracy_p[0], "%) | Euclidean: (", accuracy_p[1], "%)")
 print(classification_report(y_test, y_pred))
 print("Data collection time: ", time_data, "s")
 print("Training time: ", time_train, "s")
