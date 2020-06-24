@@ -94,8 +94,10 @@ def get_1d_spectrogram(filename):
     """
     y, sr = librosa.load(filename)
     spectrogram = np.array(librosa.feature.melspectrogram(y=y, sr=sr, n_mels=128,fmax=8000))
+    spectrogram = np.mean(spectrogram, axis = 1)
     print("Extracted spectrogram from "+filename)
-    return(spectrogram.flatten())
+    return(spectrogram)
 
 if __name__ == "__main__":
     spec = get_1d_spectrogram(get_wav_files("testing")[0])
+    print(spec)
