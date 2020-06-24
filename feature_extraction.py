@@ -78,3 +78,24 @@ def get_features(filename):
 
     print("Extracted features from "+filename)
     return(features)
+
+def get_spectrogram(filename):
+    """
+    Gets the mel spectrogram of a given audio file
+    """
+    y, sr = librosa.load(filename)
+    spectrogram = np.array(librosa.feature.melspectrogram(y=y, sr=sr, n_mels=128,fmax=8000))
+    print("Extracted spectrogram from "+filename)
+    return(spectrogram)
+
+def get_1d_spectrogram(filename):
+    """
+    Gets the mel spectrogram of a given audio file, returns 1d array
+    """
+    y, sr = librosa.load(filename)
+    spectrogram = np.array(librosa.feature.melspectrogram(y=y, sr=sr, n_mels=128,fmax=8000))
+    print("Extracted spectrogram from "+filename)
+    return(spectrogram.flatten())
+
+if __name__ == "__main__":
+    spec = get_1d_spectrogram(get_wav_files("testing")[0])

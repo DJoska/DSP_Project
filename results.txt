@@ -1,0 +1,124 @@
+1344 samples training
+507 samplse testing
+
+Total params: 42,684,299
+Trainable params: 42,684,299
+Non-trainable params: 0
+_________________________________________________________________
+Epoch 1/20
+2020-06-24 16:07:33.325807: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_10.dll
+2020-06-24 16:07:33.698083: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-06-24 16:07:34.964857: W tensorflow/stream_executor/gpu/redzone_allocator.cc:314] Internal: Invoking GPU asm compilation is supported on Cuda non-Windows platforms only
+Relying on driver to perform ptx compilation.
+Modify $PATH to customize ptxas location.
+This message will be only logged once.
+2020-06-24 16:07:35.418102: W tensorflow/core/common_runtime/bfc_allocator.cc:245] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.17GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-06-24 16:07:35.426425: W tensorflow/core/common_runtime/bfc_allocator.cc:245] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.17GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+13/14 [==========================>...] - ETA: 0s - loss: 99.4548 - accuracy: 0.2385 2020-06-24 16:07:38.848000: W tensorflow/core/common_runtime/bfc_allocator.cc:245] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.07GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-06-24 16:07:38.856055: W tensorflow/core/common_runtime/bfc_allocator.cc:245] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.07GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-06-24 16:07:39.072492: W tensorflow/core/common_runtime/bfc_allocator.cc:245] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.41GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-06-24 16:07:39.080291: W tensorflow/core/common_runtime/bfc_allocator.cc:245] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.41GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+14/14 [==============================] - 3s 207ms/step - loss: 96.4165 - accuracy: 0.2366
+Epoch 2/20
+14/14 [==============================] - 2s 131ms/step - loss: 11.5909 - accuracy: 0.3333
+Epoch 3/20
+14/14 [==============================] - 2s 130ms/step - loss: 2.2654 - accuracy: 0.3304
+Epoch 4/20
+14/14 [==============================] - 2s 130ms/step - loss: 1.7395 - accuracy: 0.3780
+Epoch 5/20
+14/14 [==============================] - 2s 131ms/step - loss: 1.4822 - accuracy: 0.4447
+Epoch 6/20
+14/14 [==============================] - 2s 131ms/step - loss: 1.2988 - accuracy: 0.5304
+Epoch 7/20
+14/14 [==============================] - 2s 131ms/step - loss: 1.1434 - accuracy: 0.5780
+Epoch 8/20
+14/14 [==============================] - 2s 130ms/step - loss: 0.9948 - accuracy: 0.6484
+Epoch 9/20
+14/14 [==============================] - 2s 131ms/step - loss: 0.8163 - accuracy: 0.6989
+Epoch 10/20
+14/14 [==============================] - 2s 131ms/step - loss: 0.8001 - accuracy: 0.7421
+Epoch 11/20
+14/14 [==============================] - 2s 133ms/step - loss: 0.7276 - accuracy: 0.7670
+Epoch 12/20
+14/14 [==============================] - 2s 130ms/step - loss: 0.6153 - accuracy: 0.8066
+Epoch 13/20
+14/14 [==============================] - 2s 131ms/step - loss: 0.5271 - accuracy: 0.8205
+Epoch 14/20
+14/14 [==============================] - 2s 131ms/step - loss: 0.5016 - accuracy: 0.8447
+Epoch 15/20
+14/14 [==============================] - 2s 131ms/step - loss: 0.4474 - accuracy: 0.8557
+Epoch 16/20
+14/14 [==============================] - 2s 130ms/step - loss: 0.4257 - accuracy: 0.8608
+Epoch 17/20
+14/14 [==============================] - 2s 131ms/step - loss: 0.3773 - accuracy: 0.8813
+Epoch 18/20
+14/14 [==============================] - 2s 131ms/step - loss: 0.3818 - accuracy: 0.8769
+Epoch 19/20
+14/14 [==============================] - 2s 130ms/step - loss: 0.3839 - accuracy: 0.8857
+Epoch 20/20
+14/14 [==============================] - 2s 129ms/step - loss: 0.3258 - accuracy: 0.8938
+16/16 [==============================] - 0s 31ms/step - loss: 1.5482 - accuracy: 0.7219
+Accuracy: 72.19
+Data collection time:  203.8694 s
+Training time:  45.947 s
+Testing time:  0.0 s
+
+whole valid set training
+whole test set testing
+
+Epoch 1/20
+2020-06-24 16:36:31.582101: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_10.dll
+2020-06-24 16:36:34.538663: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-06-24 16:36:36.936318: W tensorflow/stream_executor/gpu/redzone_allocator.cc:314] Internal: Invoking GPU asm compilation is supported on Cuda non-Windows platforms only
+Relying on driver to perform ptx compilation.
+Modify $PATH to customize ptxas location.
+This message will be only logged once.
+2020-06-24 16:36:38.346576: W tensorflow/core/common_runtime/bfc_allocator.cc:245] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.17GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-06-24 16:36:38.356193: W tensorflow/core/common_runtime/bfc_allocator.cc:245] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.17GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+126/127 [============================>.] - ETA: 0s - loss: 10.5355 - accuracy: 0.33582020-06-24 16:36:58.884234: W tensorflow/core/common_runtime/bfc_allocator.cc:245] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.48GiB with freed_by_count=0. The 
+caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+2020-06-24 16:36:58.892794: W tensorflow/core/common_runtime/bfc_allocator.cc:245] Allocator (GPU_0_bfc) ran out of memory trying to allocate 3.48GiB with freed_by_count=0. The caller indicates that this is not a failure, but may mean that there could be performance gains if more memory were available.
+127/127 [==============================] - 20s 158ms/step - loss: 10.4801 - accuracy: 0.3367
+Epoch 2/20
+127/127 [==============================] - 19s 146ms/step - loss: 1.2241 - accuracy: 0.5551
+Epoch 3/20
+127/127 [==============================] - 18s 143ms/step - loss: 0.8376 - accuracy: 0.7102
+Epoch 4/20
+127/127 [==============================] - 18s 143ms/step - loss: 0.5948 - accuracy: 0.7903
+Epoch 5/20
+127/127 [==============================] - 18s 144ms/step - loss: 0.4485 - accuracy: 0.8535
+Epoch 6/20
+127/127 [==============================] - 19s 151ms/step - loss: 0.3785 - accuracy: 0.8758
+Epoch 7/20
+127/127 [==============================] - 20s 161ms/step - loss: 0.2933 - accuracy: 0.9040
+Epoch 8/20
+127/127 [==============================] - 18s 145ms/step - loss: 0.2567 - accuracy: 0.9195
+Epoch 9/20
+127/127 [==============================] - 17s 133ms/step - loss: 0.2207 - accuracy: 0.9292
+Epoch 10/20
+127/127 [==============================] - 17s 134ms/step - loss: 0.1864 - accuracy: 0.9404
+Epoch 11/20
+127/127 [==============================] - 17s 133ms/step - loss: 0.1923 - accuracy: 0.9417
+Epoch 12/20
+127/127 [==============================] - 17s 134ms/step - loss: 0.1826 - accuracy: 0.9440
+Epoch 13/20
+127/127 [==============================] - 17s 133ms/step - loss: 0.1555 - accuracy: 0.9505
+Epoch 14/20
+127/127 [==============================] - 17s 133ms/step - loss: 0.1309 - accuracy: 0.9624
+Epoch 15/20
+127/127 [==============================] - 17s 133ms/step - loss: 0.1197 - accuracy: 0.9646
+Epoch 16/20
+127/127 [==============================] - 17s 133ms/step - loss: 0.1107 - accuracy: 0.9638
+Epoch 17/20
+127/127 [==============================] - 17s 133ms/step - loss: 0.0944 - accuracy: 0.9711
+Epoch 18/20
+127/127 [==============================] - 17s 133ms/step - loss: 0.0962 - accuracy: 0.9705
+Epoch 19/20
+127/127 [==============================] - 17s 133ms/step - loss: 0.0867 - accuracy: 0.9738
+Epoch 20/20
+127/127 [==============================] - 17s 133ms/step - loss: 0.0958 - accuracy: 0.9730
+128/128 [==============================] - 2s 16ms/step - loss: 0.0906 - accuracy: 0.9805
+Accuracy: 98.05
+Data collection time:  1332.1926 s
+Training time:  391.5208 s
+Testing time:  0.0 s

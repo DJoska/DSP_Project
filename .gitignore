@@ -9,3 +9,5 @@ samples_monstrous
 samples_huge
 testdata
 validatedata
+testing/
+samples/
