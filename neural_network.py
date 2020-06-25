@@ -20,10 +20,11 @@ import time
 tic = time.perf_counter()
 
 print(keras.__version__)
-y_train = fe.read_instruments("samples")
-x_train = [fe.get_spectrogram(filename) for filename in fe.get_wav_files("samples")]
-y_test = fe.read_instruments("testing")
-x_test = [fe.get_spectrogram(filename) for filename in fe.get_wav_files("testing")]
+y_train = fe.read_instruments("samples_low")
+x_train = [fe.get_spectrogram(filename) for filename in fe.get_wav_files("samples_low")]
+y_test = fe.read_instruments("samples_tiny")
+x_test = [fe.get_spectrogram(filename) for filename in fe.get_wav_files("samples_tiny")]
+
 #url = "http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data"
 #names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'Class']
 #dataset = pa.read_csv(url, names=names)
@@ -37,6 +38,9 @@ x_test = [fe.get_spectrogram(filename) for filename in fe.get_wav_files("testing
 #        y[i] = 1
  #   if y[i] == "Iris-virginica":
  #       y[i] = 2
+
+#x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.40)
+
 print("X length:")
 print(len(x_train))
 print("and Y length:")
